@@ -4,3 +4,4 @@
     1: git add .
     2: git commit -m "tên lần commit"
 4. git push origin "tên nhánh": để đẩy bài lên nhánh khác
+5. tài liệu: https://drive.google.com/file/d/19Tz3obQxsJ9yVk_NS1h_JNIxWZDWv1Sd/view
