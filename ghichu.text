@@ -1,2 +1,6 @@
 1.mpn run start(tên gì muốn đặt cũng được) thì sẽ chạy server
 2.ctrl+c là tắt server
+3.đẩy bài lên thì
+    1: git add .
+    2: git commit -m "tên lần commit"
+4. git push origin "tên nhánh": để đẩy bài lên nhánh khác
