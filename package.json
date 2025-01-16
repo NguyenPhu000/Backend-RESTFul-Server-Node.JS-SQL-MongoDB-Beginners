@@ -1,0 +1,27 @@
+{
+  "name": "fullstack-from-zero",
+  "version": "1.0.0",
+  "description": "Hoc tu anh \"Hoi dan IT\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NguyenPhu000/Backend-RESTFul-Server-Node.JS-SQL-MongoDB-Beginners.git"
+  },
+  "keywords": [
+    "nodejs",
+    "react"
+  ],
+  "author": "Phu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NguyenPhu000/Backend-RESTFul-Server-Node.JS-SQL-MongoDB-Beginners/issues"
+  },
+  "homepage": "https://github.com/NguyenPhu000/Backend-RESTFul-Server-Node.JS-SQL-MongoDB-Beginners#readme",
+  "dependencies": {
+    "express": "4.18.2"
+  }
+}
