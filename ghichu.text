@@ -7,4 +7,6 @@
 5. tài liệu: https://drive.google.com/file/d/19Tz3obQxsJ9yVk_NS1h_JNIxWZDWv1Sd/view
 6.kill port: npx kill-port "số cổng(PORT)"
 7.syntax: app.method(path, handler(là function xử lý khi route được match)) - method: get, post, put, delete ...
-8. 
+8.tạo một file ".env" để viết gọn code lại cho bên file server
+9. install thêm dotenv để có thể hiển thị hay là chạy được các biến đã khai báo trong file env
+10. "require("dotenv").config();"// nơi đâu sử dụng .env thì nơi đó có lệnh này
