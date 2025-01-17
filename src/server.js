@@ -5,9 +5,13 @@ require("dotenv").config();
 const app = express(); // khởi tạo express
 const port = process.env.PORT || 8888; //port // nếu không có port thì mặc định là 8888
 const hostname = process.env.HOST_NAME; //hostname
+
 // config template engine
 app.set("views", path.join(__dirname, "views")); // sử dụng path để join đường dẫn
 app.set("view engine", "ejs");
+
+//config static folder
+app.use(express.static(path.join(__dirname, "public")));
 
 // khai báo route ("/") và trả về hành động
 app.get("/", (req, res) => {
