@@ -11,7 +11,7 @@ app.set("view engine", "ejs");
 
 // khai báo route ("/") và trả về hành động
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Hello World!&nodemon");
 });
 // syntax: app.method(path, handler(là function xử lý khi route được match)) - method: get, post, put, delete ...
 app.get("/abc", (req, res) => {
