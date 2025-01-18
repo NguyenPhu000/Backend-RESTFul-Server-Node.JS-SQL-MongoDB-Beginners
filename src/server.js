@@ -10,7 +10,7 @@ const webRoutes = require("./routes/web");
 configViewEngine(app);
 
 // khai báo route ("/") và trả về hành động
-app.use("/alo", webRoutes);
+app.use(webRoutes);
 
 app.listen(port, hostname, () => {
   console.log(`Example app listening on port ${port}`);
