@@ -1,8 +1,18 @@
+const connection = require("../config/database");
 // syntax: app.method(path, handler(là function xử lý khi route được match)) - method: get, post, put, delete ...
 const getHomepage = (req, res) => {
   // sẽ có process data
   // sẽ call model
-  res.send("Hello World!&nodemon");
+  let users = [];
+  connection.query(
+    "select * from Users u",
+    //
+    function (err, results, fields) {
+      console.log(">>>results = ", results); // results contains rows returned by server
+      console.log("check users >>> ", users);
+      res.send(JSON.stringify(results));
+    }
+  );
 };
 const getAbc = (req, res) => {
   res.send("<h1>check abc<h1>");
