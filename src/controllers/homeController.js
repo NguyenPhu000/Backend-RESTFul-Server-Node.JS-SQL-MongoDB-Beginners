@@ -1,9 +1,9 @@
 const connection = require("../config/database");
-const { get } = require("../routes/web");
 const {
   getAllUsers,
   getUserById,
   updateUserById,
+  deleteUserById,
 } = require("../services/CRUDservice");
 // syntax: app.method(path, handler(là function xử lý khi route được match)) - method: get, post, put, delete ...
 const getHomepage = async (req, res) => {
@@ -46,7 +46,7 @@ const postCreateUser = async (req, res) => {
   );
   console.log("check result>>> ", results);
 
-  res.send("Create user success");
+  res.redirect("/"); // chuyển hướng người dùng về trang chủ
 };
 
 const getUpdatePage = async (req, res) => {
@@ -70,7 +70,9 @@ const postDeleteUser = async (req, res) => {
   res.render("delete.ejs", { userEdit: user });
 };
 const postHandleRemoveUser = async (req, res) => {
-  res.send("Delete user success");
+  const id = req.body.userId;
+  await deleteUserById(id);
+  res.redirect("/");
 };
 
 // export các hàm để sử dụng ở file khác
