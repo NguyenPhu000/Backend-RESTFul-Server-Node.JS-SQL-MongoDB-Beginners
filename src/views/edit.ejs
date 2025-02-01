@@ -11,14 +11,20 @@
       <div class="topnav">
         <a  href="/">Home</a>
         <a  href="/create">Create</a>
-        <a  class="active" href="/update">Update</a>
-
- 
       </div>
       <div class="form-add-new">
-        <form action="/create-user" method="POST">
+        <form action="/update-user" method="POST">
           <fieldset>
               <legend>Update User</legend>
+              <!-- them 1 class d-none de an di id vi no la 1 thong so nhay cam -->
+              <div class="input-group d-none">
+                <label >Id: </label>
+                <input 
+                type="text" 
+                name="userId" 
+                value="<%= userEdit.id %>"
+                />
+              </div>
               <div class="input-group">
                 <label >Email: </label>
                 <input 

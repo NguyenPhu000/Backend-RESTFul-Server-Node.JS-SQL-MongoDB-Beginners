@@ -1,6 +1,10 @@
 const connection = require("../config/database");
 const { get } = require("../routes/web");
-const { getAllUsers, getUserById } = require("../services/CRUDservice");
+const {
+  getAllUsers,
+  getUserById,
+  updateUserById,
+} = require("../services/CRUDservice");
 // syntax: app.method(path, handler(là function xử lý khi route được match)) - method: get, post, put, delete ...
 const getHomepage = async (req, res) => {
   let results = await getAllUsers();
@@ -50,7 +54,16 @@ const getUpdatePage = async (req, res) => {
   let user = await getUserById(userID); // lấy dữ liệu user từ db
   res.render("edit.ejs", { userEdit: user }); // render ra view edit.ejs
 };
+const getUpdateUser = async (req, res) => {
+  let email = req.body.email;
+  let name = req.body.name;
+  let city = req.body.city;
+  let userId = req.body.userId;
 
+  await updateUserById(email, name, city, userId);
+  // res.redirect sẽ chuyển hướng người dùng sang trang khác
+  res.redirect("/");
+};
 // export các hàm để sử dụng ở file khác
 // file này sau này sẽ có nhiều file nữa nên là cần khai báo module.export theo kiểu object
 module.exports = {
@@ -60,4 +73,5 @@ module.exports = {
   getCreateUser,
   getCreatePage,
   getUpdatePage,
+  getUpdateUser,
 };

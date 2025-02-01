@@ -10,3 +10,4 @@
 8.tạo một file ".env" để viết gọn code lại cho bên file server
 9. install thêm dotenv để có thể hiển thị hay là chạy được các biến đã khai báo trong file env
 10. "require("dotenv").config();"// nơi đâu sử dụng .env thì nơi đó có lệnh này
+11.// res.redirect sẽ chuyển hướng người dùng sang trang khác
