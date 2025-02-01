@@ -5,6 +5,7 @@ const {
   getYamato,
   getCreateUser,
   getCreatePage,
+  getUpdatePage,
 } = require("../controllers/homeController");
 const router = express.Router();
 
@@ -17,6 +18,8 @@ router.get("/abc", getAbc);
 router.get("/yamato", getYamato);
 
 router.get("/create", getCreatePage);
+
+router.get("/update", getUpdatePage);
 
 router.post("/create-user", getCreateUser);
 

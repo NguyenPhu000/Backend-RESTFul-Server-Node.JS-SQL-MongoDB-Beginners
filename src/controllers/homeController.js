@@ -1,4 +1,5 @@
 const connection = require("../config/database");
+const { get } = require("../routes/web");
 const { getAllUsers } = require("../services/CRUDservice");
 // syntax: app.method(path, handler(là function xử lý khi route được match)) - method: get, post, put, delete ...
 const getHomepage = async (req, res) => {
@@ -43,6 +44,11 @@ const getCreateUser = async (req, res) => {
 
   res.send("Create user success");
 };
+
+const getUpdatePage = (req, res) => {
+  res.render("edit.ejs");
+};
+
 // export các hàm để sử dụng ở file khác
 // file này sau này sẽ có nhiều file nữa nên là cần khai báo module.export theo kiểu object
 module.exports = {
@@ -51,4 +57,5 @@ module.exports = {
   getYamato,
   getCreateUser,
   getCreatePage,
+  getUpdatePage,
 };
