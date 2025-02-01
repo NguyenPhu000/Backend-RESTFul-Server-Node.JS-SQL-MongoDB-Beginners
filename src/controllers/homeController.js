@@ -1,8 +1,9 @@
 const connection = require("../config/database");
-
+const { getAllUsers } = require("../services/CRUDservice");
 // syntax: app.method(path, handler(là function xử lý khi route được match)) - method: get, post, put, delete ...
-const getHomepage = (req, res) => {
-  return res.render("home.ejs");
+const getHomepage = async (req, res) => {
+  let results = await getAllUsers();
+  return res.render("home.ejs", { listUsers: results });
 };
 
 const getAbc = (req, res) => {

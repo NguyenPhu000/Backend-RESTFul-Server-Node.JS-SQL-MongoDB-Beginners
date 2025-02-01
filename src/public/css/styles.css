@@ -70,7 +70,7 @@ legend {
   border-radius: 5px;
   border: 1px solid gray;
 }
-button {
+.form-add-new button {
   background-color: #04aa6d;
   color: white;
   padding: 14px 20px;
