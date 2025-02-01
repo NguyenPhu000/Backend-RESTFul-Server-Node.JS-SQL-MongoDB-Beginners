@@ -1,6 +1,6 @@
 const connection = require("../config/database");
 const { get } = require("../routes/web");
-const { getAllUsers } = require("../services/CRUDservice");
+const { getAllUsers, getUserById } = require("../services/CRUDservice");
 // syntax: app.method(path, handler(là function xử lý khi route được match)) - method: get, post, put, delete ...
 const getHomepage = async (req, res) => {
   let results = await getAllUsers();
@@ -45,8 +45,10 @@ const getCreateUser = async (req, res) => {
   res.send("Create user success");
 };
 
-const getUpdatePage = (req, res) => {
-  res.render("edit.ejs");
+const getUpdatePage = async (req, res) => {
+  const userID = req.params.userID; // lấy giá trị từ url
+  let user = await getUserById(userID); // lấy dữ liệu user từ db
+  res.render("edit.ejs", { userEdit: user }); // render ra view edit.ejs
 };
 
 // export các hàm để sử dụng ở file khác
