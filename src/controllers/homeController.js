@@ -24,7 +24,7 @@ const getCreatePage = (req, res) => {
   res.render("create.ejs");
 };
 
-const getCreateUser = async (req, res) => {
+const postCreateUser = async (req, res) => {
   let email = req.body.email;
   let name = req.body.name;
   let city = req.body.city;
@@ -54,7 +54,7 @@ const getUpdatePage = async (req, res) => {
   let user = await getUserById(userID); // lấy dữ liệu user từ db
   res.render("edit.ejs", { userEdit: user }); // render ra view edit.ejs
 };
-const getUpdateUser = async (req, res) => {
+const postUpdateUser = async (req, res) => {
   let email = req.body.email;
   let name = req.body.name;
   let city = req.body.city;
@@ -64,14 +64,25 @@ const getUpdateUser = async (req, res) => {
   // res.redirect sẽ chuyển hướng người dùng sang trang khác
   res.redirect("/");
 };
+const postDeleteUser = async (req, res) => {
+  const userID = req.params.userID; // lấy giá trị từ url
+  let user = await getUserById(userID); // lấy dữ liệu user từ db
+  res.render("delete.ejs", { userEdit: user });
+};
+const postHandleRemoveUser = async (req, res) => {
+  res.send("Delete user success");
+};
+
 // export các hàm để sử dụng ở file khác
 // file này sau này sẽ có nhiều file nữa nên là cần khai báo module.export theo kiểu object
 module.exports = {
   getHomepage,
   getAbc,
   getYamato,
-  getCreateUser,
+  postCreateUser,
   getCreatePage,
   getUpdatePage,
-  getUpdateUser,
+  postUpdateUser,
+  postDeleteUser,
+  postHandleRemoveUser,
 };

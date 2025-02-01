@@ -3,10 +3,12 @@ const {
   getHomepage,
   getAbc,
   getYamato,
-  getCreateUser,
+  postCreateUser,
   getCreatePage,
   getUpdatePage,
-  getUpdateUser,
+  postUpdateUser,
+  postDeleteUser,
+  postHandleRemoveUser,
 } = require("../controllers/homeController");
 const router = express.Router();
 
@@ -22,7 +24,10 @@ router.get("/create", getCreatePage);
 // su dung : de truyen tham so vao trong url
 router.get("/update/:userID", getUpdatePage);
 
-router.post("/create-user", getCreateUser);
-router.post("/update-user", getUpdateUser);
+router.post("/create-user", postCreateUser);
 
+router.post("/update-user", postUpdateUser);
+
+router.post("/delete-user/:userID", postDeleteUser);
+router.post("/delete-user", postHandleRemoveUser);
 module.exports = router;
