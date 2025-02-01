@@ -13,7 +13,7 @@
         <a href="/create">Create</a>
       </div>
      <div class="table-container">
-      <%= JSON.stringify(listUsers) %>   <!-- JSON.stringify() dùng để hiển thị object dưới dạng string -->
+      <!-- <%= JSON.stringify(listUsers) %>   JSON.stringify() dùng để hiển thị object dưới dạng string -->
       <br> 
       <span class="table-title">List User</span>
        <table>
@@ -24,34 +24,34 @@
            <th>City</th>
            <th>Action</th>
          </tr>
-         <tr>
-           <td>Peter</td>
-           <td>Griffin</td>
-           <td>$100</td>
-           <td>$100</td>
-           <td>
-            <button>Edit</button>
-            <button>Delete</button>
-           </td>
-         </tr>
-         <tr>
-           <td>Lois</td>
-           <td>Griffin</td>
-           <td>$150</td>
-           <td>$150</td>
-         </tr>
-         <tr>
-           <td>Joe</td>
-           <td>Swanson</td>
-           <td>$300</td>
-           <td>$300</td>
-         </tr>
-         <tr>
-           <td>Cleveland</td>
-           <td>Brown</td>
-           <td>$250</td>
-           <td>$250</td>
-         </tr>
+
+         
+         <!-- <% for(let i = 0; i < listUsers.length; i++) { %>
+          <tr>
+            <td><%=listUsers[i].id  %></td>
+            <td><%=listUsers[i].email  %></td>
+            <td><%=listUsers[i].name  %></td>
+            <td><%=listUsers[i].city  %></td>
+            <td>
+             <button>Edit</button>
+             <button>Delete</button>
+            </td>
+          </tr>
+          
+          <% } %> -->
+<!-- thay vi dung lap thong thuong thi dung lap forEach thi code se gon va tuong minh hon -->
+          <% listUsers.forEach(function(user) { %>
+            <tr>
+              <td><%=user.id  %></td>
+              <td><%=user.email  %></td>
+              <td><%=user.name  %></td>
+              <td><%=user.city  %></td>
+              <td>
+               <button>Edit</button>
+               <button>Delete</button>
+              </td>
+            </tr>
+         <% }); %> 
        </table>
      </div>
   </body>
