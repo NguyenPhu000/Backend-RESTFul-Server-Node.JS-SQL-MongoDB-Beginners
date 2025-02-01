@@ -18,8 +18,8 @@ router.get("/abc", getAbc);
 router.get("/yamato", getYamato);
 
 router.get("/create", getCreatePage);
-
-router.get("/update", getUpdatePage);
+// su dung : de truyen tham so vao trong url
+router.get("/update/:userID", getUpdatePage);
 
 router.post("/create-user", getCreateUser);
 

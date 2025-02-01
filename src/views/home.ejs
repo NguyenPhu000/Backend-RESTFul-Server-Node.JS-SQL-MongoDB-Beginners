@@ -43,12 +43,12 @@
 <!-- thay vi dung lap thong thuong thi dung lap forEach thi code se gon va tuong minh hon -->
           <% listUsers.forEach(function(user) { %>
             <tr>
-              <td><%=user.id  %></td>
-              <td><%=user.email  %></td>
-              <td><%=user.name  %></td>
-              <td><%=user.city  %></td>
+              <td><%=user.id %></td>
+              <td><%=user.email %></td>
+              <td><%=user.name %></td>
+              <td><%=user.city %></td>
               <td>
-               <button>Edit</button>
+               <a href="/update/<%=user.id %>">Edit</a>
                <button>Delete</button>
               </td>
             </tr>
